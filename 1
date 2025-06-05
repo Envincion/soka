@@ -1,0 +1,8 @@
+import requests
+target = "http://victim.com" 
+kali_ip = "YOUR_IP"          
+
+
+print("Testing connection to target...")
+r = requests.get(f"{target}/login")
+print(f"HTTP Status: {r.status_code}")
