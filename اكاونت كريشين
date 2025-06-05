@@ -1,0 +1,13 @@
+import random, string
+
+email = f"{''.join(random.choice(string.ascii_lowercase) for _ in range(5))}@evil.com"
+password = "hackme123"
+
+print(f"Creating account with email: {email}")
+r = requests.post(f"{target}/register",
+                data={'name':'attacker','email':email,'password':password})
+
+if "registered" in r.text.lower():
+    print("Account created successfully!")
+else:
+    print("Registration failed:", r.text)
